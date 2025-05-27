@@ -10,7 +10,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                 <img src="/logo.jpeg" alt="Tech Miya Logo" className="w-10 h-10 object-contain" />
+                 <img src="logo.jpeg" alt="Tech Miya Logo" className="w-10 h-10 object-contain" />
                
               </div>
               <span className="text-xl font-bold">Techmiya Edtech</span>
