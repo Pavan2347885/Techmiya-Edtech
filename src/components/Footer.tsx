@@ -9,10 +9,11 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">TM</span>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                 <img src="/logo.jpeg" alt="Tech Miya Logo" className="w-10 h-10 object-contain" />
+               
               </div>
-              <span className="text-xl font-bold">Tech Miya</span>
+              <span className="text-xl font-bold">Techmiya Edtech</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Transforming learning with cutting-edge technology education. 
@@ -65,9 +66,9 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <div className="space-y-2 text-gray-300">
-              <p>📧 info@techmiya.com</p>
+              <p>📧info.@techmiya_edtech</p>
               <p>📞 +1 (555) 123-4567</p>
-              <p>📍 123 Tech Street, Innovation City, TC 12345</p>
+              <p>📍 28th Main Rd, 3rd Phase, Jayanagar, Bengaluru, Karnataka 560069</p>
             </div>
           </div>
         </div>

@@ -11,8 +11,8 @@ const Courses = () => {
       title: "Full Stack Development",
       description: "Master both frontend and backend development with React, Node.js, MongoDB, and more. Build real-world applications from scratch.",
       duration: "6 months",
-      level: "Beginner to Advanced",
-      price: "$2,999",
+      level: "Beginner",
+      price: "₹2,999",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400",
       features: ["React & Node.js", "Database Design", "API Development", "Project Portfolio", "Job Placement"],
       modules: 12,
@@ -23,7 +23,7 @@ const Courses = () => {
       description: "Learn Python, machine learning, data visualization, and statistical analysis to become a data science expert.",
       duration: "4 months",
       level: "Intermediate",
-      price: "$2,499",
+      price: "₹2,499",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400",
       features: ["Python Programming", "Machine Learning", "Data Visualization", "Statistics", "Real Projects"],
       modules: 10,
@@ -34,7 +34,7 @@ const Courses = () => {
       description: "Complete Java development from basics to enterprise applications. Learn Spring Boot, Hibernate, and microservices.",
       duration: "5 months",
       level: "Beginner",
-      price: "$2,199",
+      price: "₹2,199",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400",
       features: ["Core Java", "Spring Framework", "Database Integration", "Testing", "Enterprise Apps"],
       modules: 15,
@@ -45,7 +45,7 @@ const Courses = () => {
       description: "Comprehensive aptitude training for placement interviews, competitive exams, and logical reasoning skills.",
       duration: "2 months",
       level: "All Levels",
-      price: "$799",
+      price: "₹799",
       image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400",
       features: ["Quantitative Aptitude", "Logical Reasoning", "Verbal Ability", "Mock Tests", "Interview Prep"],
       modules: 8,
@@ -56,7 +56,7 @@ const Courses = () => {
       description: "Master Amazon Web Services cloud platform. Learn deployment, scaling, and cloud architecture.",
       duration: "3 months",
       level: "Intermediate",
-      price: "$1,899",
+      price: "₹1,899",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400",
       features: ["AWS Services", "Cloud Architecture", "DevOps", "Security", "Certification Prep"],
       modules: 9,
@@ -67,7 +67,7 @@ const Courses = () => {
       description: "Build native and cross-platform mobile applications using React Native and Flutter.",
       duration: "4 months",
       level: "Intermediate",
-      price: "$2,299",
+      price: "₹2,299",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400",
       features: ["React Native", "Flutter", "Mobile UI/UX", "App Store Deployment", "Real Projects"],
       modules: 11,
@@ -146,9 +146,9 @@ const Courses = () => {
                           Enroll Now
                         </Button>
                       </Link>
-                      <Button variant="outline" className="w-full">
+                      {/* <Button variant="outline" className="w-full">
                         View Details
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </CardContent>
@@ -223,7 +223,7 @@ const Courses = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-4 text-lg">
+              <Button size="lg" variant="outline" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 Talk to Counselor
               </Button>
             </Link>

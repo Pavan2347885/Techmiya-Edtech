@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "@/components/ui/motion";
+import emailjs from "emailjs-com";
 
 const Register = () => {
   const { toast } = useToast();
@@ -35,73 +36,54 @@ const Register = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.course) {
-      toast({
-        title: "Validation Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
+  // ... validation code ...
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Phone validation
-    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-    if (!phoneRegex.test(formData.phone) || formData.phone.length < 10) {
-      toast({
-        title: "Invalid Phone",
-        description: "Please enter a valid phone number.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Simulate API call
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Registration Successful! 🎉",
-        description: "Thank you for registering! Our team will contact you within 24 hours to schedule your demo session.",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        course: "",
-        experience: "",
-        message: "",
-      });
-    } catch (error) {
-      toast({
-        title: "Registration Failed",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  const emailParams = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    course: formData.course,
+    experience: formData.experience,
+    message: formData.message,
+    time: new Date().toLocaleString(),
   };
+
+  try {
+    await emailjs.send(
+      "service_n9z5rzg",     // replace with actual service ID
+      "template_a0ke5pf",    // replace with registration template ID
+      emailParams,
+      "ngbxDDU3E7ue3VkLR"        // replace with your public API key
+    );
+    
+    toast({
+      title: "Registration Successful! 🎉",
+      description: "Thank you for registering! Our team will contact you within 24 hours.",
+    });
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      course: "",
+      experience: "",
+      message: "",
+    });
+  } catch (error) {
+    toast({
+      title: "Registration Failed",
+      description: "Something went wrong. Please try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="min-h-screen bg-gray-50 py-20">

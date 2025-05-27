@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -22,60 +23,60 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ 
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Validation Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.message) {
+    toast({
+      title: "Validation Error",
+      description: "Please fill in all required fields.",
+      variant: "destructive",
+    });
+    setIsSubmitting(false);
+    return;
+  }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
+  const emailParams = {
+  name: formData.name,
+  email: formData.email,
+  phone: formData.phone,
+  subject: formData.subject,
+  message: formData.message,
+  time: new Date().toLocaleString(),
+};
 
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Message Sent Successfully! ✉️",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-      });
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-    } catch (error) {
-      toast({
-        title: "Failed to Send Message",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  try {
+    await emailjs.send(
+      "service_n9z5rzg",     // replace with actual service ID
+      "template_8nr36xg",    // replace with actual template ID
+      emailParams,
+      "ngbxDDU3E7ue3VkLR"      // replace with your public API key
+    );
+    toast({
+      title: "Message Sent Successfully! ✉️",
+      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+    });
 
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+  } catch (error) {
+    toast({
+      title: "Failed to Send Message",
+      description: "Something went wrong. Please try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
@@ -103,8 +104,8 @@ const Contact = () => {
                 <CardTitle>Email Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-2">info@techmiya.com</p>
-                <p className="text-gray-600">admissions@techmiya.com</p>
+                <p className="text-gray-600 mb-2">info.@techmiya_edtech</p>
+               
               </CardContent>
             </Card>
 
@@ -129,8 +130,8 @@ const Contact = () => {
                 <CardTitle>Visit Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-2">123 Tech Street</p>
-                <p className="text-gray-600">Innovation City, TC 12345</p>
+                
+                <p className="text-gray-600">28th Main Rd, 3rd Phase, Jayanagar, Bengaluru, Karnataka 560069</p>
               </CardContent>
             </Card>
           </div>
@@ -228,7 +229,7 @@ const Contact = () => {
                 <CardContent>
                   <div className="aspect-video rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4723638325833!2d-74.00601468459468!3d40.74844797932561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1629794729807!5m2!1sen!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.863413965066!2d77.59264637484037!3d12.916498987393805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1593b046e93b%3A0x7ff3f9c780549b2e!2sTechmiya%20Ed-Tech!5e0!3m2!1sen!2sin!4v1747993732029!5m2!1sen!2sin"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -285,15 +286,7 @@ const Contact = () => {
                     <span className="text-xl">✉️</span>
                     <span>Send an email</span>
                   </a>
-                  <a
-                    href="https://wa.me/15551234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                  >
-                    <span className="text-xl">💬</span>
-                    <span>WhatsApp chat</span>
-                  </a>
+                 
                 </CardContent>
               </Card>
             </div>

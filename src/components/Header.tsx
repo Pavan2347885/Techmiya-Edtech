@@ -22,12 +22,10 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">TM</span>
-            </div>
-            <span className="text-xl font-bold text-gray-900">Tech Miya</span>
-          </Link>
+       <Link to="/" className="flex items-center space-x-2">
+  <img src="/logo.jpeg" alt="Tech Miya Logo" className="w-10 h-10 object-contain" />
+  <span className="text-xl font-bold text-gray-900">Techmiya Edtech </span>
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

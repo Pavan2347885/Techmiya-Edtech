@@ -59,48 +59,163 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transforming Learning with{" "}
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                  Tech Miya
-                </span>
-              </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100">
-                Empowering the next generation of tech professionals with cutting-edge skills 
-                and real-world experience.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/register">
-                  <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold px-8 py-4 text-lg">
-                    Register for Demo
-                  </Button>
-                </Link>
-                <Link to="/courses">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 text-lg">
-                    Explore Courses
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600"
-                alt="Students learning"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white text-purple-900 p-4 rounded-xl shadow-lg">
-                <div className="text-2xl font-bold">1000+</div>
-                <div className="text-sm">Students Placed</div>
-              </div>
-            </div>
+     {/* Hero Section - Replaced with TAP ACADEMY version */}
+<section className="relative bg-gradient-to-br from-blue-900 to-indigo-900 text-white overflow-hidden">
+  <div className="absolute inset-0 bg-black/20"></div>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Left Side - Rotating Tech Logos */}
+      <div className="relative h-64 w-64 mx-auto lg:mx-0">
+        {/* Circle Container */}
+        <div className="absolute inset-0 rounded-full border-4 border-blue-300/30 flex items-center justify-center">
+          <div className="absolute inset-0 rounded-full border-2 border-blue-200/20 animate-ping"></div>
+        </div>
+        
+        {/* Rotating Logos */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg animate-orbit origin-[50%_150px]">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" className="w-10 h-10" />
+        </div>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg animate-orbit origin-[-50px_50%] delay-1000">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" className="w-10 h-10" />
+        </div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg animate-orbit origin-[50%_-50px] delay-2000">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-10 h-10" />
+        </div>
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg animate-orbit origin-[150px_50%] delay-3000">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-10 h-10" />
+        </div>
+        
+        {/* Center Logo */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-xl">
+            <span className="text-white text-xl font-bold">TE</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Right Side - TAP ACADEMY Content */}
+      <div className="text-center lg:text-left">
+        <Badge variant="secondary" className="mb-4 bg-yellow-400 text-blue-900 hover:bg-yellow-500">
+          #1 Coding Institute
+        </Badge>
+        <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+          <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+         TECHMIYA EDTECH
+          </span>
+        </h1>
+        <div className="space-y-4 mb-8">
+          <p className="text-xl lg:text-2xl font-medium flex items-center">
+            <span className="mr-2">🎮</span> Gamify Learning
+          </p>
+          <p className="text-xl lg:text-2xl font-medium flex items-center">
+            <span className="mr-2">✨</span> Simplify Employment
+          </p>
+          <p className="text-xl text-blue-200">
+            The Best Institute For Java Full Stack Developer Course
+          </p>
+        </div>
+        <p className="text-lg text-blue-100 mb-8">
+          Trusted by over <span className="font-bold text-yellow-300">75,000+</span> students across India
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <Link to="/register">
+            <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold px-8 py-4 text-lg">
+              Attend Free Demo Class
+            </Button>
+          </Link>
+          <Link to="/placement">
+<Button
+  size="lg"
+  variant="outline"
+  className="border-white text-blue-900 hover:bg-white hover:text-blue-900 px-8 py-4 text-lg"
+>
+
+
+              Explore Placement Opportunity
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ {/* Company Marquee */}
+<div className="relative bg-white/10 py-6">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 className="text-center text-blue-200 text-sm font-semibold mb-4">OUR RECRUITMENT PARTNERS</h3>
+    <div className="flex overflow-hidden space-x-12">
+      <div className="flex space-x-12 animate-marquee whitespace-nowrap items-center">
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/google.com" alt="Google" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Google</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Amazon</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Microsoft</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Infosys</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/tcs.com" alt="TCS" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">TCS</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/accenture.com" alt="Accenture" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Accenture</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/wipro.com" alt="Wipro" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Wipro</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/capgemini.com" alt="Capgemini" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Capgemini</span>
+        </div>
+      </div>
+      <div className="flex space-x-12 animate-marquee2 whitespace-nowrap items-center">
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/google.com" alt="Google" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Google</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Amazon</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Microsoft</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Infosys</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/tcs.com" alt="TCS" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">TCS</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/accenture.com" alt="Accenture" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Accenture</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/wipro.com" alt="Wipro" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Wipro</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="https://logo.clearbit.com/capgemini.com" alt="Capgemini" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <span className="text-sm text-white">Capgemini</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
       {/* Mission Section */}
       <section className="py-20 bg-gray-50">
@@ -262,7 +377,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-4 text-lg">
+              <Button size="lg" variant="outline" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
                 Contact Us
               </Button>
             </Link>
